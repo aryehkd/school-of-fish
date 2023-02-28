@@ -3,5 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "scripts": {
+    "start:local": "npm run start:server & npm run start:client",
+    "start:server": "cd server && npm run build && npm run start",
+    "start:client": "cd client && npm run develop"
+  }
 }
