@@ -1,23 +1,16 @@
 import React, { FunctionComponent, useState } from 'react'
+import useImageUpload from '../../hooks'
 
 // @ts-ignore
 export interface ImageUploadProps {}
 
 export const ImageUpload: FunctionComponent<ImageUploadProps> = (props) => {
-  const [ image, setImage ] = useState(null)
-
-  const onFileChange = event => {
-    setImage(event.target.files[0]);
-  };
-
-  const onFileUpload = () => {
-    console.log(image);
-  };
+  const { saveImage, submitImage} = useImageUpload()
 
   return (
     <div>
-        <input type="file" onChange={onFileChange} />
-        <button onClick={onFileUpload}>
+        <input type="file" onChange={saveImage} />
+        <button onClick={submitImage}>
           Upload!
         </button>
     </div>
