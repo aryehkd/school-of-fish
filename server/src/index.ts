@@ -1,6 +1,7 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
 import { uploadImage } from './storage'
+import { getDocuments } from './firestore'
 
 const multer = require('multer')
 const bodyParser = require('body-parser')
@@ -42,6 +43,20 @@ app.post('/upload', async (req, res, next) => {
       .json({
         message: "Upload was successful",
         data: imageUrl
+      })
+  } catch (error) {
+    next(error)
+  }
+});
+
+app.get('/notes', async (req, res, next) => {
+  try {
+    const notes = await getDocuments()
+    res
+      .status(200)
+      .json({
+        message: "Upload was successful",
+        data: notes
       })
   } catch (error) {
     next(error)
