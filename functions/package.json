@@ -1,15 +1,13 @@
 {
-  "name": "functions",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@google-cloud/functions-framework": "^3.1.3"
+    "name": "sample-cloud-storage",
+    "version": "0.0.1",
+    "scripts": {
+        "deploy": "gcloud functions deploy onImageUpload --region=us-central1 --runtime=nodejs16 --entry-point=onImageUpload --trigger-bucket=photo-storage-1"
+    },
+    "dependencies": {
+      "@google-cloud/storage": "^1.6.0",
+      "@google-cloud/vision": "^3.1.2",
+      "@google-cloud/firestore": "^6.4.3"
+    }
   }
-}
+  
