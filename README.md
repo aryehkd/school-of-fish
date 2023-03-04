@@ -20,4 +20,4 @@ run `npm run start:local` to start both the client and server
 
 ### Creators
 
-Caeden Newbie & Aryeh Kempler DeLugach 
+Caeden Newby & Aryeh Kempler DeLugach 
