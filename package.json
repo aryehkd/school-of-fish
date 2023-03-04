@@ -7,6 +7,7 @@
   "scripts": {
     "start:local": "npm run start:server & npm run start:client",
     "start:server": "cd server && npm run build && npm run start",
-    "start:client": "cd client && npm run develop"
+    "start:client": "cd client && npm run develop",
+    "postinstall": "cd client && npm install && cd ../server && npm install && cd .."
   }
 }
