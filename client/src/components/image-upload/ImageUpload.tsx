@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from 'react'
-import useImageUpload from '../../hooks'
+import { useImageUpload } from '../../hooks'
 
 // @ts-ignore
 export interface ImageUploadProps {}

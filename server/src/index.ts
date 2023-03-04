@@ -14,10 +14,7 @@ const port = process.env.PORT;
 app.disable('x-powered-by')
 
 const multerMid = multer({
-  storage: multer.memoryStorage(),
-  limits: {
-    fileSize: 5 * 1024 * 1024,
-  },
+  storage: multer.memoryStorage()
 })
 
 app.use(multerMid.single('file'))
