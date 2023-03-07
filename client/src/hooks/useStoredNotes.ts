@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const useStoredNotes = () => {
@@ -14,6 +14,10 @@ const useStoredNotes = () => {
             console.error(e)
         }
     }
+
+    useEffect(() => {
+        getNotes()
+    }, [])
 
     return {
         notes,

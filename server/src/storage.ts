@@ -1,6 +1,5 @@
 const Cloud = require('@google-cloud/storage')
 const path = require('path')
-const util = require('util')
 
 const serviceKey = path.join(__dirname, '../service-account/schools-of-fish-e2e93d9acfe6.json')
 

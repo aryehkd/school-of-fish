@@ -12,13 +12,15 @@ const firestore = new Firestore();
  */
 exports.onImageUpload = async (event, context) => {
     const gcsEvent = event;
+
     console.log(`Processing file: ${gcsEvent.name}`);
+    
     const [result] = await client.documentTextDetection(
         `gs://${gcsEvent.bucket}/${gcsEvent.name}`
     );
 
     const fullTextAnnotation = result.fullTextAnnotation;
-    console.log(fullTextAnnotation?.text);
+    
     const document = firestore.doc('notes/'+gcsEvent.name);
     await document.set({
       title: gcsEvent.name,
